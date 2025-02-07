@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Fake Magic 8 Ball</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-image: url(https://i.pinimg.com/originals/bd/e3/54/bde354f0c5e2cf98d348b082c4b85cc1.gif);
+                font-family: sans-serif;
+                color: white;
+                padding: 100px;
+            }
+            
+            .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 25%;
+            }
+            
+            .button {
+              border: none;
+              color: white;
+              padding: 15px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+            }
+            
+            .button1 {background-color: #d6a4bd;}
+            .button2 {background-color: #d8c5ab;}
+            
+            .button-container {
+                text-align: center; /* Center aligns inline elements like buttons */
+                margin-top: 20px; /* Adds space above the buttons */
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            h2 {
+                text-align: center;
+            }
+            
+            p {
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>Fake Magic 8 Ball</h1>
+            <p class="center">A magic 8 ball that only answers two very puzzling questions!</p>
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/050/549/187/small/pool-or-snooker-ball-isolated-on-transparent-background-png.png" alt="a magic 8 ball" class="center">
+            
+            <h2 class="center">Ask your question and you shall receive an answer...</h2>
+
+            <div class="button-container">
+                <button class="button button1" id="myButton">Should I drop out?</button>
+                <button class="button button2" id="myButton2">Should I get a job?</button> 
+            </div>
+            
+            <script>
+                const myButton = document.getElementById("myButton");
+                const myButton2 = document.getElementById("myButton2");
+
+                const answers = ["Yes!", "No!", "Maybe...", "Ask again!", "Definitely!", "I don't think so.", "That's a terribly dumb idea!", "Hell no!"];
+
+                function getRandomAnswer() {
+                    return answers[Math.floor(Math.random() * answers.length)];
+                }
+
+                function updateButton1() {
+                    myButton.textContent = getRandomAnswer();
+                }
+
+                function updateButton2() {
+                    myButton2.textContent = getRandomAnswer();
+                }
+
+                myButton.addEventListener("click", updateButton1);
+                myButton2.addEventListener("click", updateButton2);
+            </script>
+        </main>
+    </body>
+</html>
